@@ -11572,11 +11572,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Web\\Jungle_Web.csproj",
+      "projectUniqueName": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Web\\Jungle_Web.csproj",
       "projectName": "Jungle_Web",
-      "projectPath": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Web\\Jungle_Web.csproj",
+      "projectPath": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Web\\Jungle_Web.csproj",
       "packagesPath": "C:\\Users\\1952247\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Web\\obj\\",
+      "outputPath": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11597,11 +11597,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_DataAccess\\Jungle_DataAccess.csproj": {
-              "projectPath": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_DataAccess\\Jungle_DataAccess.csproj"
+            "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_DataAccess\\Jungle_DataAccess.csproj": {
+              "projectPath": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_DataAccess\\Jungle_DataAccess.csproj"
             },
-            "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Models\\Jungle_Models.csproj": {
-              "projectPath": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Models\\Jungle_Models.csproj"
+            "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Models\\Jungle_Models.csproj": {
+              "projectPath": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Models\\Jungle_Models.csproj"
             }
           }
         }
@@ -11669,7 +11669,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

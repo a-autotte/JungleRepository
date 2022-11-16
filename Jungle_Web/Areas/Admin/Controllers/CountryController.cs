@@ -12,12 +12,10 @@ namespace Jungle_Web.Areas.Admin.Controllers
   public class CountryController : Controller
   {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly ILogger<CountryController> _logger;
 
-    public CountryController(IUnitOfWork unitOfWork, ILogger<CountryController> logger)
+    public CountryController(IUnitOfWork unitOfWork)
     {
-       _unitOfWork = unitOfWork;
-       _logger = logger;
+      _unitOfWork = unitOfWork;
     }
 
     public IActionResult Index()

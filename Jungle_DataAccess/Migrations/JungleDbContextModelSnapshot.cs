@@ -38,6 +38,13 @@ namespace Jungle_DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Country");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "France"
+                        });
                 });
 
             modelBuilder.Entity("Jungle_Models.Destination", b =>
@@ -66,6 +73,15 @@ namespace Jungle_DataAccess.Migrations
                     b.HasIndex("Country_Id");
 
                     b.ToTable("Destination");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Country_Id = 1,
+                            Name = "Tour Effiel",
+                            Region = "Paris"
+                        });
                 });
 
             modelBuilder.Entity("Jungle_Models.Guide", b =>
@@ -94,6 +110,31 @@ namespace Jungle_DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Guide");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Jean",
+                            LastName = "Pierre",
+                            Speciality = "Avec les parisien"
+                        });
+                });
+
+            modelBuilder.Entity("Jungle_Models.HistoriqueTravel", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int>("NbParticipant")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("HistoriqueTravel");
                 });
 
             modelBuilder.Entity("Jungle_Models.Travel", b =>
@@ -120,6 +161,9 @@ namespace Jungle_DataAccess.Migrations
                     b.Property<int>("Guide_Id")
                         .HasColumnType("int");
 
+                    b.Property<int?>("HistoriqueTravel_Id")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -136,9 +180,49 @@ namespace Jungle_DataAccess.Migrations
 
                     b.HasIndex("Guide_Id");
 
+                    b.HasIndex("HistoriqueTravel_Id");
+
                     b.HasIndex("TravelRecommendation_Id");
 
                     b.ToTable("Travel");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DepartureDate = new DateTime(2022, 12, 7, 11, 31, 1, 682, DateTimeKind.Local).AddTicks(4128),
+                            Description = "Voyage en france",
+                            Destination_Id = 1,
+                            Duration = 3200,
+                            Guide_Id = 1,
+                            Name = "France",
+                            Price = 1200.99m,
+                            TravelRecommendation_Id = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DepartureDate = new DateTime(2022, 11, 25, 11, 31, 1, 682, DateTimeKind.Local).AddTicks(4188),
+                            Description = "Voyage en égypte",
+                            Destination_Id = 1,
+                            Duration = 3200,
+                            Guide_Id = 1,
+                            Name = "Égypte",
+                            Price = 1528.99m,
+                            TravelRecommendation_Id = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DepartureDate = new DateTime(2022, 11, 30, 11, 31, 1, 682, DateTimeKind.Local).AddTicks(4198),
+                            Description = "Voyage en Afrique",
+                            Destination_Id = 1,
+                            Duration = 3200,
+                            Guide_Id = 1,
+                            Name = "Afrique",
+                            Price = 999.99m,
+                            TravelRecommendation_Id = 1
+                        });
                 });
 
             modelBuilder.Entity("Jungle_Models.TravelRecommendation", b =>
@@ -164,6 +248,15 @@ namespace Jungle_DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TravelRecommendation");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DangerLevel = "5",
+                            Description = "Les parisien peuvent être impatient",
+                            Type = "Social"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -389,6 +482,10 @@ namespace Jungle_DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Jungle_Models.HistoriqueTravel", "HistoriqueTravel")
+                        .WithMany("travel")
+                        .HasForeignKey("HistoriqueTravel_Id");
+
                     b.HasOne("Jungle_Models.TravelRecommendation", "TravelRecommendation")
                         .WithMany()
                         .HasForeignKey("TravelRecommendation_Id");
@@ -396,6 +493,8 @@ namespace Jungle_DataAccess.Migrations
                     b.Navigation("Destination");
 
                     b.Navigation("Guide");
+
+                    b.Navigation("HistoriqueTravel");
 
                     b.Navigation("TravelRecommendation");
                 });
@@ -464,6 +563,11 @@ namespace Jungle_DataAccess.Migrations
             modelBuilder.Entity("Jungle_Models.Guide", b =>
                 {
                     b.Navigation("Travel");
+                });
+
+            modelBuilder.Entity("Jungle_Models.HistoriqueTravel", b =>
+                {
+                    b.Navigation("travel");
                 });
 #pragma warning restore 612, 618
         }

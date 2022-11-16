@@ -18,12 +18,10 @@ namespace Jungle_DataAccess.Repository
       // Initialiser chaque repo.passant de DbContext en parametre
       //NomClasse = new NomClasseRepository(_db);
 
-      Travel = new TravelRepository(_db);
-      Country = new CountryRepository(_db);
-      Destination = new DestinationRepository(_db);
-      Travel = new TravelRepository(_db);
-      TravelRecommendation = new TravelRecommendationRepository(_db);
-      
+        Travel = new TravelRepository(_db);
+        Country = new CountryRepository(_db);
+        Destination = new DestinationRepository(_db);
+        HistoriqueTravel = new HistoriqueTravelRepository(_db);
     }
 
     public ITravelRepository Author => throw new NotImplementedException();
@@ -37,6 +35,7 @@ namespace Jungle_DataAccess.Repository
     public IGuideRepository Guide { get; private set; }
     public ITravelRepository Travel { get; private set; }
     public ITravelRecommendationRepository TravelRecommendation { get; private set; }
+        public IHistoriqueTravelRepository HistoriqueTravel { get; private set; }
 
     public void Dispose()
     {

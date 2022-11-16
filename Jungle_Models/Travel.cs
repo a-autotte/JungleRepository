@@ -40,5 +40,10 @@ namespace Jungle_Models
     public int? TravelRecommendation_Id { get; set; }
     //Propriété de navigation 1 à 1
     public TravelRecommendation TravelRecommendation { get; set; }
-  }
+
+        [ForeignKey("HistoriqueTravel")]
+        public int? HistoriqueTravel_Id { get; set; }
+
+        public HistoriqueTravel HistoriqueTravel { get; set; }
+    }
 }

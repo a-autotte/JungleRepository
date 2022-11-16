@@ -14,12 +14,10 @@ namespace Jungle_Web.Areas.Admin.Controllers
   public class DestinationController : Controller
   {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly ILogger<DestinationController> _logger;
 
-    public DestinationController(IUnitOfWork unitOfWork, ILogger<DestinationController> logger)
+    public DestinationController(IUnitOfWork unitOfWork)
     {
-       _unitOfWork = unitOfWork;
-       _logger = logger;
+      _unitOfWork = unitOfWork;
     }
 
     public IActionResult Index()

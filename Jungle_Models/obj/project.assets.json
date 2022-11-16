@@ -6752,11 +6752,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Models\\Jungle_Models.csproj",
+      "projectUniqueName": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Models\\Jungle_Models.csproj",
       "projectName": "Jungle_Models",
-      "projectPath": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Models\\Jungle_Models.csproj",
+      "projectPath": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Models\\Jungle_Models.csproj",
       "packagesPath": "C:\\Users\\1952247\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\1952247\\Desktop\\Jungle\\Jungle_Models\\obj\\",
+      "outputPath": "C:\\Users\\1952247\\Documents\\S19_Jungle (1)\\Jungle\\Jungle_Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6817,7 +6817,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

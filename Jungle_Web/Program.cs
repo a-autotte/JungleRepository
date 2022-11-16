@@ -2,8 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Jungle_DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using Jungle_DataAccess.Repository.IRepository;
 using Jungle_DataAccess.Repository;
+using Jungle_DataAccess.Repository.IRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 

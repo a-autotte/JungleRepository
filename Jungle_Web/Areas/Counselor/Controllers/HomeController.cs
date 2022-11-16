@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Jungle_DataAccess.Repository.IRepository;
+using Jungle_Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,16 +13,23 @@ namespace Jungle.Areas.Counselor.Controllers
   public class HomeController : Controller
   {
     private readonly ILogger<HomeController> _logger;
+        private readonly IUnitOfWork _unitOfwork;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
     {
-      _logger = logger;
+            _unitOfwork = unitOfWork;
+            _logger = logger;
     }
 
     public IActionResult Index()
     {
       return View();
     }
+        public IActionResult Edit(int id)
+        {
+            Travel travel = _unitOfwork.Travel.FirstOrDefault(t => t.Id == id);
+            return View(travel);
+        }
 
   }
 }

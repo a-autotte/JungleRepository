@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jungle_DataAccess.Migrations
 {
     [DbContext(typeof(JungleDbContext))]
-    [Migration("20221114142143_initialeCreate")]
-    partial class initialeCreate
+    [Migration("20221116155422_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,6 +40,13 @@ namespace Jungle_DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Country");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "France"
+                        });
                 });
 
             modelBuilder.Entity("Jungle_Models.Destination", b =>
@@ -68,6 +75,15 @@ namespace Jungle_DataAccess.Migrations
                     b.HasIndex("Country_Id");
 
                     b.ToTable("Destination");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Country_Id = 1,
+                            Name = "Tour Effiel",
+                            Region = "Paris"
+                        });
                 });
 
             modelBuilder.Entity("Jungle_Models.Guide", b =>
@@ -96,6 +112,15 @@ namespace Jungle_DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Guide");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FirstName = "Jean",
+                            LastName = "Pierre",
+                            Speciality = "Avec les parisien"
+                        });
                 });
 
             modelBuilder.Entity("Jungle_Models.Travel", b =>
@@ -141,6 +166,44 @@ namespace Jungle_DataAccess.Migrations
                     b.HasIndex("TravelRecommendation_Id");
 
                     b.ToTable("Travel");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DepartureDate = new DateTime(2022, 12, 7, 10, 54, 22, 269, DateTimeKind.Local).AddTicks(8358),
+                            Description = "Voyage en france",
+                            Destination_Id = 1,
+                            Duration = 3200,
+                            Guide_Id = 1,
+                            Name = "France",
+                            Price = 1200.99m,
+                            TravelRecommendation_Id = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DepartureDate = new DateTime(2022, 11, 25, 10, 54, 22, 269, DateTimeKind.Local).AddTicks(8432),
+                            Description = "Voyage en égypte",
+                            Destination_Id = 1,
+                            Duration = 3200,
+                            Guide_Id = 1,
+                            Name = "Égypte",
+                            Price = 1528.99m,
+                            TravelRecommendation_Id = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DepartureDate = new DateTime(2022, 11, 30, 10, 54, 22, 269, DateTimeKind.Local).AddTicks(8446),
+                            Description = "Voyage en Afrique",
+                            Destination_Id = 1,
+                            Duration = 3200,
+                            Guide_Id = 1,
+                            Name = "Afrique",
+                            Price = 999.99m,
+                            TravelRecommendation_Id = 1
+                        });
                 });
 
             modelBuilder.Entity("Jungle_Models.TravelRecommendation", b =>
@@ -166,6 +229,15 @@ namespace Jungle_DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TravelRecommendation");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DangerLevel = "5",
+                            Description = "Les parisien peuvent être impatient",
+                            Type = "Social"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
